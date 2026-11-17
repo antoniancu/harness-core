@@ -1,6 +1,8 @@
 ---
 name: research
 description: Investigate a question against high-trust primary sources and capture the findings as a Markdown file in the repo. Use when the user wants a topic researched, docs or API facts gathered, or reading legwork delegated to a background agent.
+metadata:
+  upstream: "mattpocock/skills (MIT), adapted; see skills/LICENSE-mattpocock-skills.md"
 ---
 
 Spin up a **background agent** to do the research, so you keep working while it reads. Start it with a fresh context window.

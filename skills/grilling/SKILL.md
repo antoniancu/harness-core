@@ -1,6 +1,8 @@
 ---
 name: grilling
 description: Grill the user relentlessly about a plan, decision, or idea, interactively or executive style (you draft researched rulings, a fresh reviewer attacks them, the user approves in one reply). Use when the user wants to stress-test their thinking, uses any 'grill' trigger phrases, or when the core Never Assume rule calls for a grilling session.
+metadata:
+  upstream: "mattpocock/skills (MIT), adapted; see skills/LICENSE-mattpocock-skills.md"
 ---
 
 Interview the user relentlessly until you reach a shared understanding. Map this as a **design tree**: every decision branches into the decisions that hang off it.

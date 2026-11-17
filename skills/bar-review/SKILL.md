@@ -1,6 +1,6 @@
 ---
 name: bar-review
-description: Judge finished work against a named bar, "would the best team in the world ship this?", and answer SHIP, REJECT or ESCALATE with evidence. Use when you are the reviewer handed a diff, PR, plan, spec or design: a red team, a fresh review chat or subagent, or the review stage of the line.
+description: Judge finished work against a named bar, "would the best team in the world ship this?", and answer SHIP, REJECT or ESCALATE with evidence. Use when you are the reviewer handed a diff, PR, plan, spec or design: a red team, a fresh review chat or subagent, or a review stage in a pipeline.
 ---
 
 # Bar review
@@ -31,11 +31,11 @@ The first line of your reply is exactly one of `VERDICT: SHIP`, `VERDICT: REJECT
 
 ## Rounds
 
-The caller owns the loop: it counts rounds, keeps the reports and passes them in the brief. Today no caller loops (review-standards-spec runs one round); the line's orchestrator will. A brief with no round number is a single review: judge it once and leave rounds out of the reply.
+The caller owns the loop: it counts rounds, keeps the reports and passes them in the brief. A brief with no round number is a single review: judge it once and leave rounds out of the reply.
 
 From round 2, the brief also carries the builder's answer to each earlier finding: fixed, kept with a reason, or rejected with a reason. Rule on each against the evidence. A fix that holds, or a rejection whose reason checks out, closes the finding; the rest stay open and block. A new finding blocks only when it's high and you verified it in code or output you actually saw. Anything else new (a medium, a low, a worry about a file you couldn't open) goes under the verdict as an optional note or a question. This is how the loop converges instead of moving the goalposts each round.
 
-Rounds 1 and 2 end in SHIP or REJECT. Round 3 is core's agent-to-agent cap: work that would still be rejected gets ESCALATE, which hands the human the choice core offers: step in, or approve 3 more rounds. List the findings still open and what each round changed. As a subagent or headless run, return the ESCALATE to your parent; the parent raises it with the human (core Hand-offs).
+Rounds 1 and 2 end in SHIP or REJECT. Round 3 is core's agent-to-agent cap: work that would still be rejected gets ESCALATE, which hands the human the choice core offers: step in, or approve 3 more rounds. List the findings still open and what each round changed. As a subagent or headless run, return the ESCALATE to your parent; the parent raises it with the human.
 
 Single-round callers (core Red Team, the grilling skill's executive review) decide themselves whether a second round runs; this skill adds no rounds there.
 

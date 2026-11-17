@@ -13,7 +13,7 @@ Solutions live in time. For anything that persists or keeps running after this t
 - **Drift:** copies of something maintained elsewhere (vendored code, copied config, forked skills) fall behind their source; name what keeps them in step, or why it doesn't matter.
 - **Neighbours:** name the related item most likely to change (another tool, a schedule, a person, a plan) and what breaks if it does.
 
-Name the risk; build the remedy only when it's in scope and cheap, otherwise park it (skill `tangents`) or log it as `build` comprehension debt (core Debt Ledger and Reference Ids). Deliveries that leave something persisted or running carry an "Over time" line covering only the items that apply; omit it otherwise.
+Name the risk; build the remedy only when it's in scope and cheap, otherwise park it (skill `tangents`) or log it as `build` comprehension debt (core Debt and Reference Ids). Deliveries that leave something persisted or running carry an "Over time" line covering only the items that apply; omit it otherwise.
 
 ## Moving or renaming a folder
 

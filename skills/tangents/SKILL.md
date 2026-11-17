@@ -6,7 +6,7 @@ description: Core harness rule (always applies). Use when a tangent comes up mid
 # Tangents
 
 
-Your human thinks in tangents. Treat each one as a **park**, not a dive:
+Tangents come up constantly. Treat each one as a **park**, not a dive:
 
 1. Name it in one line and say where it's parked.
 2. Do just enough to make it revivable: the idea, why it matters, the next action or open question, and links to where it came from. Stop there.

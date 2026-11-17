@@ -24,13 +24,31 @@ A small set of rules and skills that make an AI coding agent (Claude Code, Codex
 ## Install (Claude Code)
 
 ```sh
-git clone <this repo> ~/Dev/harness-core
-cp ~/Dev/harness-core/PERSONAL.example.md ~/Dev/harness-core/PERSONAL.md   # then edit it
-ln -s ~/Dev/harness-core/AGENTS.md ~/.claude/CLAUDE.md                     # back up any existing file first
-echo '@~/Dev/harness-core/PERSONAL.md' >> ~/.claude/CLAUDE.md
-for s in ~/Dev/harness-core/skills/*/; do ln -s "$s" ~/.claude/skills/; done
+git clone https://github.com/antoniancu/harness-core.git ~/Dev/harness-core
+cd ~/Dev/harness-core
+cp PERSONAL.example.md PERSONAL.md        # then edit it; it's gitignored
+
+# Refuses to overwrite an existing global CLAUDE.md: merge by hand if you have one.
+test -e ~/.claude/CLAUDE.md && echo "~/.claude/CLAUDE.md exists, merge by hand" || \
+  printf '@~/Dev/harness-core/AGENTS.md\n@~/Dev/harness-core/PERSONAL.md\n' > ~/.claude/CLAUDE.md
+
+mkdir -p ~/.claude/skills
+for s in ~/Dev/harness-core/skills/*/; do ln -sn "${s%/}" ~/.claude/skills/; done
 ```
 
-For Codex or other agents, point their global `AGENTS.md` at the same file and install the skills where that agent reads them.
+`git pull` updates the rules and skills in place; your `PERSONAL.md` stays untouched.
 
-Some skills are adapted from others' work and say so in their own files (for example Matt Pocock's skills, MIT).
+## Install (Codex and other agents)
+
+Codex doesn't follow `@` imports, so build one file from both layers and rebuild it after each `git pull`:
+
+```sh
+mkdir -p ~/.codex
+cat ~/Dev/harness-core/AGENTS.md ~/Dev/harness-core/PERSONAL.md > ~/.codex/AGENTS.md
+```
+
+Install the skills wherever your agent reads agentskills.io skills (for Codex, `~/.codex/skills/`, or `~/.agents/skills/` for agents that share that path).
+
+## Credits
+
+`grilling`, `prototype`, `domain-modeling`, `research`, `writing-for-agents` and part of `shared-artifacts` are adapted from [mattpocock/skills](https://github.com/mattpocock/skills) (MIT). The notice is in `skills/LICENSE-mattpocock-skills.md`.

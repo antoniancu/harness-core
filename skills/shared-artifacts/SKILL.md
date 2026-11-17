@@ -1,6 +1,6 @@
 ---
 name: shared-artifacts
-description: Core harness rule (always applies). Use before writing or editing any PR body (gh pr create, gh pr edit, /pr), ticket or issue description, Linear or Notion doc, wiki page, shared spec, or review reply that replaces existing text. Covers PR template adherence (read .github/pull_request_template.md, same headings in the same order, fill every section), PR body content (smallest visual, before/after evidence, one-way or two-way door call) and read-before-replace on artifacts other agents and humans edit (re-fetch, edit surgically, recover from body history).
+description: Core harness rule (always applies). Use before writing or editing any PR body (gh pr create, gh pr edit), ticket or issue description, Linear or Notion doc, wiki page, shared spec, or review reply that replaces existing text. Covers PR template adherence (read .github/pull_request_template.md, same headings in the same order, fill every section), PR body content (smallest visual, before/after evidence, one-way or two-way door call) and read-before-replace on artifacts other agents and humans edit (re-fetch, edit surgically, recover from body history).
 ---
 
 # Shared artifacts: PR bodies, tickets, docs
@@ -8,16 +8,13 @@ description: Core harness rule (always applies). Use before writing or editing a
 
 ## PR Body Template Adherence (CRITICAL)
 
-Every PR body MUST follow the repo's own `.github/pull_request_template.md`. This applies to ALL PRs, even ones opened manually with `gh pr create` outside the `/pr` skill.
+Every PR body follows the repo's own `.github/pull_request_template.md`, including PRs opened manually with `gh pr create`.
 
-- **Read the template from disk first** (`cat <repo>/.github/pull_request_template.md`). It is the source of truth, not memory or a hardcoded copy: the team edits it and it varies per repo and client.
-- **Match it perfectly:** exact same section headings, in the exact same order. No added sections, no reordering, no renaming. Do NOT prepend a `## Summary`. Do NOT hoist or duplicate `## Media`: leave it in its template position (no `## Demo/Media`).
-- **Only exception, audit-note sections:** `/pr` Step 4b may append `## UX Notes` (from `/ux-audit`) after the template sections, and ONLY when that audit actually produced findings. No findings, no section (never an empty audit heading).
-- **Fill EVERY section** the template defines. Never silently drop a heading. If a section genuinely doesn't apply, keep the heading with a one-line "N/A - <reason>" (e.g. `_N/A - docs-only PR, no UI._`), including `## Media`.
-- **Do NOT edit `.github/pull_request_template.md`** to fit a PR: it's shared team config.
+- **Read the template from disk first** (`cat <repo>/.github/pull_request_template.md`). It is the source of truth, not memory or a hardcoded copy: the team edits it and it varies per repo.
+- **Match it perfectly:** exact same section headings, in the exact same order. No added sections, no reordering, no renaming. Don't prepend a `## Summary` or move a section out of its template position.
+- **Fill EVERY section** the template defines. Never silently drop a heading. If a section genuinely doesn't apply, keep the heading with a one-line "N/A - <reason>" (e.g. `_N/A - docs-only PR, no UI._`).
+- **Don't edit `.github/pull_request_template.md`** to fit a PR: it's shared team config.
 - Check off all template todos by default (`[x]`).
-
-This was flagged in review: PRs opened without the template are "defective in form." No exceptions.
 
 ## PR Body Content
 

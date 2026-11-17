@@ -12,4 +12,4 @@ Timed follow-ups get scheduled, never left to your human. When something should 
 - Recurring, spending or writing: put it in this turn's brief for your human's OK (locked rule Guardrails).
 - No scheduler here (headless, cloud, subagent): log it as a comprehension-debt item with the date as its trigger, else list it as UNSCHEDULED at the top of the delivery. Subagents report follow-ups to their parent.
 - When a debt item covers the same check, the item is canonical; the scheduled task cites its `#debt` id and closes it with evidence.
-- Results land in your human's next decision window; only reserved emergencies notify. Never end a turn with "check X after Y" for your human to remember.
+- Report results when your human is next in a session; interrupt only for something urgent. Never end a turn with "check X after Y" for your human to remember.
