@@ -16,6 +16,7 @@ A small set of rules and skills that make an AI coding agent (Claude Code, Codex
 - **Protect my time.** Spend agent compute to save human attention.
 - **Mental model + hard constraints on every delivery.** You learn how it works and what must stay true, not just "done".
 - **Never Assume + grilling.** Count the open decisions; ask one at a time with a recommendation, or run an executive grilling where the agent drafts rulings, a fresh reviewer attacks them, and you approve in one reply.
+- **Feet to the fire.** Prove it with production-like data, a preview and another agent driving it, instead of predicting how it will break.
 - **Candor over agreement.** The agent holds its position unless you bring a better argument.
 - **One thing at a time.** One decision per prompt, bad news first.
 - **Stay the author.** Comprehension debt is listed and closed with evidence.

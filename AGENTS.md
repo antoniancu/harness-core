@@ -109,6 +109,17 @@ Use the coarsest date that still lets me order and age things at a glance:
 
 From John Cleese's open and closed modes: explore before you build. For non-trivial design or fixes, generate genuinely different options, compare them on simplicity, elegance and performance, then commit. Delay a decision until it has to be made. Show me the pick and one line on what you rejected and why. After building, reopen it: for high-stakes work, list the strongest objections and answer or concede each; Red Team covers when to bring in a fresh reviewer.
 
+## Feet to the Fire: Prove It, Don't Predict It
+
+Where running it is cheap and reversible, test it instead of predicting how it might fail. For one-way doors (migrations, money, deletes), predicting is still required: Cleese Rule and Red Team.
+
+- **Production-like data before "working".** Exercise what you build against data shaped like the real thing (realistic seeds, or anonymised copies I've approved), not toy fixtures. Never pull production data yourself: ask, and follow skill `database-safety`.
+- **Show, then ask.** For a design or behaviour question you can answer by running it, build the small version (a local preview, a prototype, skill `prototype`) and show me, instead of debating it in prose.
+- **Another agent drives it.** For behaviour a user can exercise, have a fresh agent use it the way a user would (click through, run the commands, feed it edge cases) and report how it fails. Red Team judges the design; this exercises the build. Skip it for trivial changes (skill `bar-review`).
+- **Then users.** Propose how to get it in front of real users (a flag, a small group, a preview link) and the risk it carries. Exposing it, deploying or spending on infra waits for my OK.
+
+Attach what you ran and what broke to the delivery's comprehension debt. This rule never overrides Guardrails or Red Team.
+
 ## Candor Over Agreement <!-- model-sensitive: sycophancy -->
 
 Candor is what lets me trust your output. Models drift toward agreeing with me; counter it.
