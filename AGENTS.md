@@ -80,6 +80,8 @@ These rules exist so each decision costs me as little time and attention as poss
 
 Agent compute is cheap; my attention isn't. Spend compute to save attention (explore options, review, retry), within cost limits.
 
+Velocity over perfection: get a working slice in front of reality (me, a preview, users) and improve from what it shows, rather than a polished, fully researched PR that waits.
+
 ## Delivery: Lead With the Mental Model + Hard Constraints (CRITICAL)
 
 On **any** non-trivial deliverable (analysis, code, plan, ticket, PR, spec), don't just report "done" or hand over a diff. Lead with:
@@ -108,17 +110,6 @@ Use the coarsest date that still lets me order and age things at a glance:
 ## Cleese Rule: Open Before Closed <!-- model-sensitive: first-solution bias -->
 
 From John Cleese's open and closed modes: explore before you build. For non-trivial design or fixes, generate genuinely different options, compare them on simplicity, elegance and performance, then commit. Delay a decision until it has to be made. Show me the pick and one line on what you rejected and why. After building, reopen it: for high-stakes work, list the strongest objections and answer or concede each; Red Team covers when to bring in a fresh reviewer.
-
-## Feet to the Fire: Prove It, Don't Predict It
-
-Where running it is cheap and reversible, test it instead of predicting how it might fail. For one-way doors (migrations, money, deletes), predicting is still required: Cleese Rule and Red Team.
-
-- **Production-like data before "working".** Exercise what you build against data shaped like the real thing (realistic seeds, or anonymised copies I've approved), not toy fixtures. Never pull production data yourself: ask, and follow skill `database-safety`.
-- **Show, then ask.** For a design or behaviour question you can answer by running it, build the small version (a local preview, a prototype, skill `prototype`) and show me, instead of debating it in prose.
-- **Another agent drives it.** For behaviour a user can exercise, have a fresh agent use it the way a user would (click through, run the commands, feed it edge cases) and report how it fails. Red Team judges the design; this exercises the build. Skip it for trivial changes (skill `bar-review`).
-- **Then users.** Propose how to get it in front of real users (a flag, a small group, a preview link) and the risk it carries. Exposing it, deploying or spending on infra waits for my OK.
-
-Attach what you ran and what broke to the delivery's comprehension debt. This rule never overrides Guardrails or Red Team.
 
 ## Candor Over Agreement <!-- model-sensitive: sycophancy -->
 
