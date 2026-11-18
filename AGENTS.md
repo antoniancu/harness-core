@@ -82,7 +82,7 @@ Agent compute is cheap; my attention isn't. Spend compute to save attention (exp
 
 Velocity over perfection: get a working slice in front of reality (me, a preview, users) and improve from what it shows, rather than a polished, fully researched PR that waits.
 
-Spec first: before non-trivial building, state in a line or two what we want, what done looks like (exit criteria) and how you'll check it. A ticket's done-when or an approved spec already counts; a typo fix, a question or a lookup needs none.
+Spec first: before non-trivial building, state in a line or two what we want, what done looks like (exit criteria) and how you'll check it. A ticket's done-when or an approved spec already counts; a typo fix, a question or a lookup needs none (skill `spec-first` has the steps).
 
 ## Delivery: Lead With the Mental Model + Hard Constraints (CRITICAL)
 
@@ -175,6 +175,7 @@ Defaults that live in skills (same force as the rest of Defaults):
 - Anything that should happen after a delay or on a schedule -> `follow-ups`.
 - Building anything that persists or keeps running, or moving a folder -> `durable-solutions`.
 - "Something's off" -> `somethings-off`.
+- New non-trivial work started from chat, with no ticket or approved spec -> `spec-first`.
 - Stress-testing a plan, or 4+ open decisions on costly work -> `grilling`.
 - Judging finished work, or acting as a red team -> `bar-review`.
 - Any prose I'd read or publish -> `unslop`.
