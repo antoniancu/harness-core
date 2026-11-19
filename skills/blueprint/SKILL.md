@@ -73,9 +73,9 @@ Start a fresh reviewer (a subagent or a new session that did not write the bluep
 
 Number each finding, and save each round as `red-team-<N>.md` with its token cost. A `ruling` finding (about a rule, not the text) goes to the human, not into a fix.
 
-Rounds follow Red Team: one round, and one confirm round when the fixes changed the design. The confirm reviewer gets the previous findings and your disposition of each. After the confirm round, stop. Give the human the open findings with the approval drafts, and let them decide: approve with the findings open, allow more rounds with a token ceiling, or stop.
+The agent rounds follow Red Team: one round, and one confirm round when the fixes changed the design. The confirm reviewer gets the previous findings and your disposition of each. Then the human takes over. Give them the open findings with the drafts. Rounds with the human have no ceiling: revise, and run another review round when they ask for one, until they are satisfied and approve or stop the work.
 
-Done when: the last permitted round is done, and the version that goes to approval is the version that was reviewed. An edit after the review that changes a criterion, a constraint, an edge or the scope goes back to a review round or to the human. Other edits are listed with their diff at the approval.
+Done when: the human is satisfied with the reviewed version, and the version that goes to approval is the version that was reviewed. An edit after the review that changes a criterion, a constraint, an edge or the scope goes back to a review round or to the human. Other edits are listed with their diff at the approval.
 
 ### 6. Draft the mission card and the orchestrator brief
 
