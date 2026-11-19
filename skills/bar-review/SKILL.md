@@ -26,6 +26,9 @@ The first line of your reply is exactly one of `VERDICT: SHIP`, `VERDICT: REJECT
 - **Severity:** high (wrong, unsafe, breaks the intent or a hard constraint); medium (works, but a named reader would be misled or a named next change gets harder); low (optional). A REJECT needs at least one high or medium finding.
 - **Evidence:** `file:line`, command output, a screenshot, a quoted spec line. Something the builder can open, not your impression.
 - **The fix:** concrete enough that a builder in a fresh chat can act on it without asking you.
+- **Kind:** `fix` when the work breaks a rule that is already agreed (the spec, a success criterion, an ADR, a hard constraint, the repo's rules). `ruling` when the rule itself is open or wrong: an ADR question, a new hard constraint, a product choice, or a criterion that you think is wrong (for example, the source of truth itself holds an error). A `ruling` names the question and the options and does not choose for the human; its fix says what changes for each option. When you are not sure, use `ruling`.
+
+A loop sends only `fix` findings back to the builder. A `ruling` leaves the loop and goes to the human, so a design decision is never made in code.
 
 **ESCALATE** only in a review loop, as below.
 
@@ -33,7 +36,7 @@ The first line of your reply is exactly one of `VERDICT: SHIP`, `VERDICT: REJECT
 
 The caller owns the loop: it counts rounds, keeps the reports and passes them in the brief. A brief with no round number is a single review: judge it once and leave rounds out of the reply.
 
-From round 2, the brief also carries the builder's answer to each earlier finding: fixed, kept with a reason, or rejected with a reason. Rule on each against the evidence. A fix that holds, or a rejection whose reason checks out, closes the finding; the rest stay open and block. A new finding blocks only when it's high and you verified it in code or output you actually saw. Anything else new (a medium, a low, a worry about a file you couldn't open) goes under the verdict as an optional note or a question. This is how the loop converges instead of moving the goalposts each round.
+A `ruling` finding from an earlier round that the brief marks as waiting for the human does not block this round and is not raised again. From round 2, the brief also carries the builder's answer to each earlier finding: fixed, kept with a reason, or rejected with a reason. Rule on each against the evidence. A fix that holds, or a rejection whose reason checks out, closes the finding; the rest stay open and block. A new finding blocks only when it's high and you verified it in code or output you actually saw. Anything else new (a medium, a low, a worry about a file you couldn't open) goes under the verdict as an optional note or a question. This is how the loop converges instead of moving the goalposts each round.
 
 Rounds 1 and 2 end in SHIP or REJECT. Round 3 is core's agent-to-agent cap: work that would still be rejected gets ESCALATE, which hands the human the choice core offers: step in, or approve 3 more rounds. List the findings still open and what each round changed. As a subagent or headless run, return the ESCALATE to your parent; the parent raises it with the human.
 
