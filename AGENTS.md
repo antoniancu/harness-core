@@ -26,7 +26,7 @@ Agent to agent: up to 3 question-and-answer rounds per side, then stop and ask t
 
 - **Output directory:** plans, notes and ticket artifacts go to a vault outside the repo: the path in my personal layer, default `~/docs-vault/<repo-name>/` (create it if missing). Never inside the repo, never committed.
   - Subfolder per ticket: `[YYYY-MM-DD]-[TICKET-ID-or-slug]-[ticket-title-slug]/`. The date prefix keeps Finder sorted.
-- **Situational rules live in skills** and load when their task starts: writing or editing a PR body, ticket or other shared artifact -> `shared-artifacts`; writing, superseding or retiring a cross-session memory -> `memory-records`; any database CLI operation -> `database-safety`; frontend animation -> `motion`. These rules are as binding as the ones below.
+- **Situational rules live in skills** and load when their task starts: writing or editing a PR body, ticket or other shared artifact -> `shared-artifacts`; writing or rewriting a ticket or issue body -> `ticket-authoring`; writing, superseding or retiring a cross-session memory -> `memory-records`; any database CLI operation -> `database-safety`; frontend animation -> `motion`. These rules are as binding as the ones below.
 
 ## No Crossed Wires
 

@@ -22,6 +22,8 @@ A small set of rules and skills that make an AI coding agent (Claude Code, Codex
 - **One thing at a time.** One decision per prompt, bad news first.
 - **Stay the author.** Comprehension debt is listed and closed with evidence.
 - **Tangents get parked, not chased.**
+- **Blueprint before a big build.** Decided ADRs become a red-teamed plan, ticket drafts with a dependency graph, a mission card and an orchestrator brief. You approve all four at once; only then do tickets reach the tracker.
+- **Tickets read cold.** A ticket body must work for someone who wasn't in the room.
 
 ## Install (Claude Code)
 
