@@ -53,6 +53,12 @@ cat ~/Dev/harness-core/AGENTS.md ~/Dev/harness-core/PERSONAL.md > ~/.codex/AGENT
 
 Install the skills wherever your agent reads agentskills.io skills (for Codex, `~/.codex/skills/`, or `~/.agents/skills/` for agents that share that path).
 
+## Guard against destructive commands
+
+harness-core ships rules and skills, not hooks: hooks are tied to one agent's tooling. For a guard that stops an agent before `rm -rf`, a force-push, a `DROP TABLE` or a cloud delete, use the `/careful` skill from [garrytan/gstack](https://github.com/garrytan/gstack/tree/main/careful) (MIT). It asks before risky commands and refuses the catastrophic ones (recursive deletes of `/` or `~`, force-pushes to the default branch, disk wipes). The Guardrails rule then keeps the agent from weakening it.
+
 ## Credits
 
 `grilling`, `prototype`, `domain-modeling`, `research`, `writing-for-agents` and part of `shared-artifacts` are adapted from [mattpocock/skills](https://github.com/mattpocock/skills) (MIT). The notice is in `skills/LICENSE-mattpocock-skills.md`.
+
+The destructive-command guard this README points to is gstack's `/careful` by Garry Tan (MIT); this repo does not copy its code.
